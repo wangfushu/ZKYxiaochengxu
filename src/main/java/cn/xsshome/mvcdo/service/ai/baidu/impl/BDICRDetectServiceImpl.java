@@ -12,7 +12,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRFuseDO;
 import cn.xsshome.mvcdo.service.ai.baidu.BDICRDetectService;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月9日
  * <p>Description: 图像识别Service实现类</p>
  */

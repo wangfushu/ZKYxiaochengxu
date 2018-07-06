@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.pojo.ai.tencent.dbo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月5日
  * <p>Description: 优图识别数据库表对象</p>
  */

@@ -3,7 +3,7 @@ package cn.xsshome.mvcdo.pojo.ai.baidu.po;
 import java.util.List;
 /**
  *
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月9日
  * <p>Description: 菜品识别Bean </p>
  */

@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.vo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月21日
  * <p>Description: 身份证识别结果页面对象</p>
  */

@@ -12,7 +12,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDFaceDetectDO;
 import cn.xsshome.mvcdo.service.ai.baidu.BDFaceDetectService;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 人脸检测实现类</p>
  */

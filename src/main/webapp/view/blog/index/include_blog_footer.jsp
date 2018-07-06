@@ -13,8 +13,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="小帅丶,人工智能,图像识别">
-	<meta http-equiv="description" content="小帅丶博客">
+	<meta http-equiv="keywords" content="福淑,人工智能,图像识别">
+	<meta http-equiv="description" content="福淑博客">
 <style type="text/css">
 	@media (max-width:768px){
 		.side{ display:none;  }
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<ul>
 			<li>
 				<div class="qqbdimg">
-					<img src="${ctx}/image/blog/qqxs.jpg" title="联系小帅丶" />
+					<img src="${ctx}/image/blog/qqxs.jpg" title="联系福淑" />
 				</div>
 				<a class="sidetop" href="javascript:scroll(0,0)" id="qqbd" title="学习交流"><i class="fa fa-qq"></i></a>
 			</li>

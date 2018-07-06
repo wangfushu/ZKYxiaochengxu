@@ -3,7 +3,7 @@ package cn.xsshome.mvcdo.util;
 import java.util.Date;
 /**
  * 登录响应对象
- * @author 小帅丶
+ * @author 福淑
  */
 public class LoginResponse{
 	private String logId;

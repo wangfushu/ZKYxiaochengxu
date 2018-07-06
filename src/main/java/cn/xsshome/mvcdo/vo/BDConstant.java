@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.vo;
 /**
  *
- * @author 小帅丶
+ * @author 福淑
  * @create 2018-02-02 13:08
  **/
 public enum  BDConstant {

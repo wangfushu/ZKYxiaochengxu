@@ -7,7 +7,7 @@ import java.util.List;
 /**
 * Auto-generated: 2018-05-07 9:39:5
 * V3版本人脸检测Javabean
-* @author 小帅丶
+* @author 福淑
 */
 public class FaceV3DetectBean {
    /**
@@ -77,7 +77,7 @@ public class FaceV3DetectBean {
     }
     /**
      * Result
-     * @author 小帅丶
+     * @author 福淑
      *
      */
     public static class Result {
@@ -105,7 +105,7 @@ public class FaceV3DetectBean {
     }
     /**
      * Face_list
-     * @author 小帅丶
+     * @author 福淑
      *
      */
     public static class Face_list {
@@ -254,7 +254,7 @@ public class FaceV3DetectBean {
     }
     /**
      * Race
-     * @author 小帅丶
+     * @author 福淑
      *
      */
     public static class Race {
@@ -276,7 +276,7 @@ public class FaceV3DetectBean {
     }
     /**
      * Landmark72
-     * @author 小帅丶
+     * @author 福淑
      *
      */
    public static class Landmark72 {
@@ -299,7 +299,7 @@ public class FaceV3DetectBean {
    }
    /**
     * Landmark
-    * @author 小帅丶
+    * @author 福淑
     *
     */
    public static class Landmark {
@@ -321,7 +321,7 @@ public class FaceV3DetectBean {
 	}
    /**
     * Glasses
-    * @author 小帅丶
+    * @author 福淑
     *
     */
    public static class Glasses {
@@ -342,7 +342,7 @@ public class FaceV3DetectBean {
 	}
    /**
     * Gender
-    * @author 小帅丶
+    * @author 福淑
     *
     */
    public static class Gender {
@@ -363,7 +363,7 @@ public class FaceV3DetectBean {
 	}
    /**
     * Face_shape
-    * @author 小帅丶
+    * @author 福淑
     *
     */
   public static class Face_shape {
@@ -385,7 +385,7 @@ public class FaceV3DetectBean {
   }
   /**
    * Expression
-   * @author 小帅丶
+   * @author 福淑
    *
    */
   public static class Expression {
@@ -406,7 +406,7 @@ public class FaceV3DetectBean {
 	}
   /**
    * Angle
-   * @author 小帅丶
+   * @author 福淑
    *
    */
   public static class Angle {
@@ -436,7 +436,7 @@ public class FaceV3DetectBean {
 	}
   /**
    * Location
-   * @author 小帅丶
+   * @author 福淑
    *
    */
   public static class Location {

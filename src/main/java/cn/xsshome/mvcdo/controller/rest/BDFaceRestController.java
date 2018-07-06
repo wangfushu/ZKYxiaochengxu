@@ -36,7 +36,7 @@ import cn.xsshome.mvcdo.vo.BdFaceResponse;
 
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller

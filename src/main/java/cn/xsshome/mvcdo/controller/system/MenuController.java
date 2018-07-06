@@ -26,7 +26,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 菜单Controller
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller
@@ -45,7 +45,7 @@ public class MenuController {
 	 * 加载菜单数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/listMenu")
@@ -63,7 +63,7 @@ public class MenuController {
 	 * 跳转菜单添加页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/addMenu/{pId}")
@@ -85,7 +85,7 @@ public class MenuController {
 	 * 保存菜单数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="saveMenu")
@@ -110,7 +110,7 @@ public class MenuController {
 	 * 菜单编辑页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/editMenu/{id}",method=RequestMethod.GET)
@@ -136,7 +136,7 @@ public class MenuController {
 	 * 菜单更新
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/updateMenu")
@@ -162,7 +162,7 @@ public class MenuController {
 	 * 菜单删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/removeMenu")
@@ -188,7 +188,7 @@ public class MenuController {
 	 * 加载菜单Tree数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/treeMenu")
@@ -206,7 +206,7 @@ public class MenuController {
 	 * 加载菜单Tree数据根据roleid
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/treeMenu/{roleId}",method=RequestMethod.GET)

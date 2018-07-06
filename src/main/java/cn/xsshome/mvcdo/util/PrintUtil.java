@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 /**
  * 接口请求的输出工具类
  * 
- * @author 小帅丶
+ * @author 福淑
  * @类名称 PrintUtil
  * @remark
  * @date 2017-6-28

@@ -9,7 +9,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRDishDO;
 import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRFuseDO;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 图像识别dao</p>
  */

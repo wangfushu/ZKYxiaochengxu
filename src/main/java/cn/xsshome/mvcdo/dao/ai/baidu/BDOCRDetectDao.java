@@ -10,7 +10,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDOCRGeneralDO;
 import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDOCRIdCardDO;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 文字识别dao</p>
  */

@@ -41,7 +41,7 @@ import cn.xsshome.mvcdo.vo.BDOCRGeneralResponse;
 import cn.xsshome.mvcdo.vo.BDOCRIdCardResponse;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月16日
  * <p>Description: </p>
  */

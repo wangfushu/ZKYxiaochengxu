@@ -28,7 +28,7 @@ import cn.xsshome.mvcdo.util.Query;
 import cn.xsshome.mvcdo.util.WholeResponse;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 文字识别管理模块</p>
  */

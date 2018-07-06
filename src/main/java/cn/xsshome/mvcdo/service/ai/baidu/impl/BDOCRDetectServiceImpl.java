@@ -13,7 +13,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDOCRIdCardDO;
 import cn.xsshome.mvcdo.service.ai.baidu.BDOCRDetectService;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 文字识别实现类</p>
  */

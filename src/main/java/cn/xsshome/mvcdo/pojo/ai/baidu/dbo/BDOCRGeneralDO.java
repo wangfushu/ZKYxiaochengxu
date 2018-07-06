@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.pojo.ai.baidu.dbo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月18日
  * <p>Description: 文字识别数据库表对象</p>
  */

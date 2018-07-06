@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 部门管理
  * 
- * @author 小帅丶
+ * @author 福淑
  */
 public class DeptDO implements Serializable {
 	private static final long serialVersionUID = 1L;

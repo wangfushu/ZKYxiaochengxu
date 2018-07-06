@@ -15,8 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="小帅丶,人工智能,图像识别">
-	<meta http-equiv="description" content="小帅丶博客">
+	<meta http-equiv="keywords" content="福淑,人工智能,图像识别">
+	<meta http-equiv="description" content="福淑博客">
   </head>
   
   <body>
@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="site-heading">
-						<h1>小帅丶博客</h1>
+						<h1>福淑博客</h1>
 						<span class="subheading">平生不做皱眉事,世上应无切齿人</span>
 					</div>
 				</div>

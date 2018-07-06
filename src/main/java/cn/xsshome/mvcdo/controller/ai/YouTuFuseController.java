@@ -26,7 +26,7 @@ import cn.xsshome.mvcdo.util.Query;
 import cn.xsshome.mvcdo.util.WholeResponse;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月05日
  * <p>Description: 优图识别管理模块</p>
  */

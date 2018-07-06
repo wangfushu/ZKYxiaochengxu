@@ -7,7 +7,7 @@ import java.util.Map;
 import cn.xsshome.mvcdo.pojo.blog.ContentDO;
 /**
  * 博客接口
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public interface ContentService {

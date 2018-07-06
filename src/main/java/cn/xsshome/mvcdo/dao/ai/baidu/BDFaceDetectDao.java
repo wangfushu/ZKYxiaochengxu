@@ -10,7 +10,7 @@ import cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDFaceDetectDO;
 
 /**
  * 百度人脸检测dao
- * @author 小帅丶
+ * @author 福淑
  */
 @Mapper
 public interface BDFaceDetectDao {

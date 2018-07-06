@@ -8,7 +8,7 @@ import com.baidu.aip.imageclassify.AipImageClassify;
 import com.baidu.aip.ocr.AipOcr;
 /**
  * 加载模块对象
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public class BDFactory {

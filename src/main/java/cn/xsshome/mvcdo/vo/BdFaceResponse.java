@@ -2,7 +2,7 @@ package cn.xsshome.mvcdo.vo;
 
 /**
  *
- * @author 小帅丶
+ * @author 福淑
  * @create 2018年5月7日
  **/
 public class BdFaceResponse extends RestResponse{

@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import cn.xsshome.mvcdo.pojo.ai.tencent.dbo.YouTuDetectFuseDO;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月5日
  * <p>Description: 优图Dao</p>
  */

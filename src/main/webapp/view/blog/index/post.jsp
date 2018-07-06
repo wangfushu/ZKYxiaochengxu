@@ -15,8 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="小帅丶,人工智能,图像识别">
-	<meta http-equiv="description" content="小帅丶博客">
+	<meta http-equiv="keywords" content="福淑,人工智能,图像识别">
+	<meta http-equiv="description" content="福淑博客">
   </head>
   <body>
 	<jsp:include page="/view/blog/index/include_blog_nav.jsp"></jsp:include>

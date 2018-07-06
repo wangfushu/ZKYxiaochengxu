@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>管理平台</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="renderer" content="webkit">
-	<meta name="description" content="小帅丶">
+	<meta name="description" content="福淑">
 	<link rel="shortcut icon" href="<%=basePath%>image/favicon.ico">
  	<link href="<%=basePath%>bootstrap/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="<%=basePath%>bootstrap/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">

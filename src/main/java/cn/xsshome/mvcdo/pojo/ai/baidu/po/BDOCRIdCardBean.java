@@ -6,7 +6,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月21日
  * <p>Description: 文字识别身份证识别对象</p>
  */

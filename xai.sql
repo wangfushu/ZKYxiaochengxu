@@ -52,7 +52,7 @@ VALUES
 	(11,'1216201356377266754',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1529419134.jpg',NULL,NULL,'wcs'),
 	(12,'868531977897502009',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1529419748.jpg',NULL,NULL,'wsc'),
 	(13,'2226192319812611736',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1529419793.jpg',NULL,NULL,'wsc'),
-	(14,'2983315820613810620',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1529505256.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc'),
+	(14,'2983315820613810620',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1529505256.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc'),
 	(15,'648513983153541761',1,'884','true','牛油果沙拉','0.322625','/icrDish/icrBD1530112083.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','%E5%B0%8F%E5%B8%85%E4%B8%B6','wsc');
 
 /*!40000 ALTER TABLE `ai_bd_dish` ENABLE KEYS */;
@@ -92,9 +92,9 @@ LOCK TABLES `ai_bd_face` WRITE;
 
 INSERT INTO `ai_bd_face` (`faceId`, `errorCode`, `errorMsg`, `logId`, `timestamp`, `cached`, `faceNum`, `faceToken`, `faceProbability`, `age`, `beauty`, `expressionType`, `faceShapeType`, `gender`, `glassesType`, `raceType`, `openId`, `nikeName`, `imagePath`)
 VALUES
-	(28,'0','SUCCESS','2267528118','1528816284',0,1,'c739e29fc9b2bf58a18b63ae3868b237','0',18,'65.46601868','none','heart','female','none','yellow','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','/face/faceV3BD1528816282.jpeg'),
-	(29,'0','SUCCESS','4137833425','1529414807',0,1,'2a5781540fb973bc2af81fd2f4e8915f','1',14,'27.21316338','none','square','male','none','yellow','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','/face/faceV3BD1529414807.jpeg'),
-	(30,'0','SUCCESS','565353545997','1530023626',0,1,'4db3bf7b672fddb0dc647040d60ab567','1',35,'48.57863998','none','square','female','none','white','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','/face/faceV3BD1530023626.jpg');
+	(28,'0','SUCCESS','2267528118','1528816284',0,1,'c739e29fc9b2bf58a18b63ae3868b237','0',18,'65.46601868','none','heart','female','none','yellow','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','/face/faceV3BD1528816282.jpeg'),
+	(29,'0','SUCCESS','4137833425','1529414807',0,1,'2a5781540fb973bc2af81fd2f4e8915f','1',14,'27.21316338','none','square','male','none','yellow','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','/face/faceV3BD1529414807.jpeg'),
+	(30,'0','SUCCESS','565353545997','1530023626',0,1,'4db3bf7b672fddb0dc647040d60ab567','1',35,'48.57863998','none','square','female','none','white','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','/face/faceV3BD1530023626.jpg');
 
 /*!40000 ALTER TABLE `ai_bd_face` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -156,16 +156,16 @@ VALUES
 	(22,'4909285853755985255',NULL,'俄罗斯蓝猫','0.900236',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrAnimal/icrBD1529504058.jpg',NULL,NULL,'wsc','animal'),
 	(23,'7909721516667171995',NULL,'俄罗斯蓝猫','0.900236',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrAnimal/icrBD1529504112.jpg',NULL,NULL,'wsc','animal'),
 	(24,'4115871906987965637',NULL,'俄罗斯蓝猫','0.900236',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrAnimal/icrBD1529504444.jpg',NULL,NULL,'wsc','animal'),
-	(25,'4449656786413799227',NULL,'宝马X6','0.8291090130806','2008-2017','蓝色',390,237,140,140,NULL,NULL,'/icrCar/icrBD1529505267.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc','car'),
-	(26,'4098741631430619754',NULL,' 红爪','0.527228474617',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrPlant/icrBD1529505276.jpeg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc','plant'),
-	(27,'7495563487449622095',NULL,'俄罗斯蓝猫','0.900236',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrAnimal/icrBD1529505288.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc','animal'),
+	(25,'4449656786413799227',NULL,'宝马X6','0.8291090130806','2008-2017','蓝色',390,237,140,140,NULL,NULL,'/icrCar/icrBD1529505267.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc','car'),
+	(26,'4098741631430619754',NULL,' 红爪','0.527228474617',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrPlant/icrBD1529505276.jpeg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc','plant'),
+	(27,'7495563487449622095',NULL,'俄罗斯蓝猫','0.900236',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrAnimal/icrBD1529505288.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc','animal'),
 	(28,'3004452361317695708',3,'宇朔',NULL,NULL,NULL,158,81,257,257,'1','0.23676879882813','/icrLogo/icrBD1529505384.png','','','wcs','logo'),
 	(29,'4922994809395688338',3,'威克多',NULL,NULL,NULL,22,16,130,130,'1','0.17916635366587','/icrLogo/icrBD1529505668.jpg','','','wcs','logo'),
 	(30,'8589429329847125438',1,'好丽友',NULL,NULL,NULL,348,296,125,125,'0','0.33739825696276','/icrLogo/icrBD1529505678.jpg','','','wcs','logo'),
 	(31,'2313362101957997103',3,'创康牛牛',NULL,NULL,NULL,144,69,25,25,'1','0.28404907226562','/icrLogo/icrBD1529505701.jpeg','','','wcs','logo'),
-	(32,'291502941047212274',1,'好丽友',NULL,NULL,NULL,348,296,125,125,'0','0.33739825696276','/icrLogo/icrBD1529505843.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc','logo'),
+	(32,'291502941047212274',1,'好丽友',NULL,NULL,NULL,348,296,125,125,'0','0.33739825696276','/icrLogo/icrBD1529505843.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc','logo'),
 	(33,'8113648217635878640',1,'西葫芦','0.6414338350296',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrIngredient/icrBD1529505974.jpg','','','wcs','ingredient'),
-	(34,'1342089172263543324',1,'西葫芦','0.6414338350296',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrIngredient/icrBD1529506293.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','wsc','ingredient'),
+	(34,'1342089172263543324',1,'西葫芦','0.6414338350296',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrIngredient/icrBD1529506293.jpg','op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','wsc','ingredient'),
 	(35,'7685779084951351016',NULL,' 红爪','0.527228474617',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrPlant/icrBD1530110185.jpeg','','','wsc','plant'),
 	(36,'4680658177713368614',NULL,' 红爪','0.527228474617',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrPlant/icrBD1530111222.jpeg','','','wsc','plant'),
 	(37,'7867527885460485506',NULL,' 红爪','0.527228474617',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'/icrPlant/icrBD1530111296.jpeg','','','wsc','plant'),
@@ -453,7 +453,7 @@ VALUES
 	(8,0,'OK',NULL,NULL,NULL,NULL,'2630808538012713460',16,0,24,0,100,1,0,NULL,NULL,'/youtuFace/ocrBD1529416407.jpeg','wcs','face',0),
 	(9,-1101,'SDK_IMAGE_FACEDETECT_FAILED',NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,NULL,NULL,'/youtuFace/ocrBD1529416671.jpg','wcs','face',0),
 	(10,0,'OK',NULL,NULL,NULL,NULL,'2630817758145704452',25,99,9,0,79,0,0,NULL,NULL,'/youtuFace/ocrBD1529416954.JPG','wsc','face',0),
-	(11,0,'OK',NULL,NULL,NULL,NULL,'2632298702657552672',16,0,24,0,100,1,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','/youtuFace/ocrBD1529505228.jpeg','wsc','face',0),
+	(11,0,'OK',NULL,NULL,NULL,NULL,'2632298702657552672',16,0,24,0,100,1,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','/youtuFace/ocrBD1529505228.jpeg','wsc','face',0),
 	(12,0,'OK',NULL,'食指','99%',NULL,NULL,0,0,0,0,0,0,0,'','','/youtuHt/ocrBD1529588591.jpg','wcs','ht',1),
 	(13,-9101,'HANDAR_NO_HANDS',NULL,NULL,NULL,NULL,NULL,0,0,0,0,0,0,0,'','','/youtuHt/ocrBD1529589675.jpg','wcs','ht',0),
 	(14,0,'OK',NULL,'SIX','99%',NULL,NULL,0,0,0,0,0,0,0,'','','/youtuHt/ocrBD1529589687.jpg','wcs','ht',1),
@@ -475,7 +475,7 @@ VALUES
 	(30,0,'OK',NULL,NULL,NULL,'独坐敬亭山,李自,众鸟高飞尽，孤云独去闲。,相看两不厌，只有敬亭山。',NULL,0,0,0,0,0,0,0,'','','/youtuHw/ocrBD1529592287.jpg','wsc','hw',0),
 	(31,0,'OK',NULL,NULL,NULL,'独坐敬亭山,李自,众鸟高飞尽，孤云独去闲。,相看两不厌，只有敬亭山。',NULL,0,0,0,0,0,0,0,'','','/youtuHw/ocrBD1529592623.jpg','wsc','hw',0),
 	(32,0,'OK',NULL,NULL,NULL,'独坐敬亭山,李自,众鸟高飞尽，孤云独去闲。,相看两不厌，只有敬亭山。',NULL,0,0,0,0,0,0,0,'','','/youtuHw/ocrBD1529592684.jpg','wsc','hw',0),
-	(33,0,'OK',NULL,NULL,NULL,NULL,'2640996648069691833',42,0,13,0,76,1,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','小帅丶','/youtuFace/ocrBD1530023666.jpg','wsc','face',0),
+	(33,0,'OK',NULL,NULL,NULL,NULL,'2640996648069691833',42,0,13,0,76,1,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','福淑','/youtuFace/ocrBD1530023666.jpg','wsc','face',0),
 	(34,0,'OK',NULL,NULL,NULL,NULL,'2642476048452735505',16,0,24,0,100,1,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','%E5%B0%8F%E5%B8%85%E4%B8%B6','/youtuFace/ocrBD1530111845.jpeg','wsc','face',0),
 	(35,0,'OK',NULL,'布,拳头','99%,99%',NULL,NULL,0,0,0,0,0,0,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','%E5%B0%8F%E5%B8%85%E4%B8%B6','/youtuHt/ocrBD1530112210.jpg','wsc','ht',2),
 	(36,0,'OK',NULL,NULL,NULL,'独坐敬亭山,李自,众鸟高飞尽，孤云独去闲。,相看两不厌，只有敬亭山。',NULL,0,0,0,0,0,0,0,'op5Hs0EYFmR7XvvWNrbsMFVn22Kk','%E5%B0%8F%E5%B8%85%E4%B8%B6','/youtuHw/ocrBD1530112228.jpg','wsc','hw',0);
@@ -938,7 +938,7 @@ LOCK TABLES `sys_user` WRITE;
 INSERT INTO `sys_user` (`userId`, `username`, `name`, `password`, `deptId`, `email`, `mobile`, `status`, `userIdCreate`, `gmtCreate`, `gmtModified`, `sex`, `birth`, `province`, `city`, `district`)
 VALUES
 	(1,'admin','超级管理员','123456',6,'admin@example.com','123456',1,'1','2017/8/15 21:40:39','2017/8/15 21:41:00',NULL,NULL,NULL,NULL,NULL),
-	(137,'xiaoshuai','小帅丶','4e34bc24454ebc6e7ece909696d62329',8,'youngxiaoshuai@163.com','',1,'','','',NULL,NULL,NULL,NULL,NULL),
+	(137,'xiaoshuai','福淑','4e34bc24454ebc6e7ece909696d62329',8,'youngxiaoshuai@163.com','',1,'','','',NULL,NULL,NULL,NULL,NULL),
 	(138,'xsinfo','小帅','125bcea642c30012be7124af2738064f',NULL,'youngxiaoshuai@163.com','',1,'','','',NULL,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;

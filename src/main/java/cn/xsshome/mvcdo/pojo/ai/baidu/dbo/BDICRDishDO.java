@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.pojo.ai.baidu.dbo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月9日
  * <p>Description: 图像识别菜品识别表对象</p>
  */

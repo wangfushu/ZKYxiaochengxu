@@ -30,7 +30,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 博文
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller

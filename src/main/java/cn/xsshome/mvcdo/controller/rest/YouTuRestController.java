@@ -41,7 +41,7 @@ import cn.xsshome.taip.util.Base64Util;
 
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月31日
  * <p>Description: 腾讯优图rest服务</p>
  */

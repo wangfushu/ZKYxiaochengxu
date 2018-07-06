@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 应用信息
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public class AIConstant {
@@ -33,7 +33,7 @@ public class AIConstant {
     //部门根节点id
     public static Long DEPT_ROOT_ID = 0l;
     //部门根节点名称
-    public static String DEPT_ROOT_NAME = "小帅丶科技";
+    public static String DEPT_ROOT_NAME = "福淑科技";
 	//百度图像识别
 	public static String BD_FACE_APPID;
 	public static String BD_FACE_APPKEY;

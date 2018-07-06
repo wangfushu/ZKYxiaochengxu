@@ -33,7 +33,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 用户管理Controller
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller
@@ -54,7 +54,7 @@ public class UserController {
 	 * 加载用户数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/listUser")
@@ -75,7 +75,7 @@ public class UserController {
 	/**
 	 * 添加用户
 	 * @param model 权限数据
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/addUser")
@@ -87,7 +87,7 @@ public class UserController {
 	/**
 	 * 编辑用户
 	 * @param model 权限数据 用户数据
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/editUser/{id}")
@@ -106,7 +106,7 @@ public class UserController {
 	/**
 	 * 保存新加用户
 	 * @param userDO  用户数据
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/saveUser")
@@ -131,7 +131,7 @@ public class UserController {
 	 * 用户更新
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/updateUser")
@@ -157,7 +157,7 @@ public class UserController {
 	 * 用户删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/removeUser")
@@ -183,7 +183,7 @@ public class UserController {
 	 * 用户批量删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/batchRemoveUser")
@@ -225,7 +225,7 @@ public class UserController {
 	 * 重置密码方法
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/resetPwd",method=RequestMethod.POST)
@@ -251,7 +251,7 @@ public class UserController {
 	 * 更新密码方法
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/updatePwd",method=RequestMethod.POST)
@@ -298,7 +298,7 @@ public class UserController {
 	 * 加载部门树形结构数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/tree")

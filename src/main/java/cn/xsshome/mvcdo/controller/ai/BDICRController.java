@@ -28,7 +28,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月9日
  * <p>Description: 图像识别后台服务</p>
  */

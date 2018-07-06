@@ -40,7 +40,7 @@ import cn.xsshome.mvcdo.vo.BdFaceResponse;
 import cn.xsshome.taip.face.TAipFace;
 import cn.xsshome.taip.ptu.TAipPtu;
 /**
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月29日
  * <p>Description: 腾讯ai人脸融合 人脸对比</p>
  */

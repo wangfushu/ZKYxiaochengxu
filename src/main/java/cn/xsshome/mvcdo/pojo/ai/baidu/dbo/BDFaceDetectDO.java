@@ -2,7 +2,7 @@ package cn.xsshome.mvcdo.pojo.ai.baidu.dbo;
 /**
  * 百度人脸检测javabean
  * 表对应的javabean
- * @author 小帅丶
+ * @author 福淑
  * TableName:ai_bd_face
  */
 public class BDFaceDetectDO {

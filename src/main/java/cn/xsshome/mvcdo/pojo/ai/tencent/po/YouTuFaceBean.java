@@ -3,7 +3,7 @@ package cn.xsshome.mvcdo.pojo.ai.tencent.po;
 import java.util.List;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月4日
  * <p>Description: 优图人脸bean 部分字段</p>
  */

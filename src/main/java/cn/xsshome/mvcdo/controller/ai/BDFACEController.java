@@ -26,7 +26,7 @@ import cn.xsshome.mvcdo.util.Query;
 import cn.xsshome.mvcdo.util.WholeResponse;
 /**
  * 人脸管理模块
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller

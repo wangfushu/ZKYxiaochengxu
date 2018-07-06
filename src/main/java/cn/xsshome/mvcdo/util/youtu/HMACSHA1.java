@@ -6,7 +6,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 /** 
  * HMACSHA1算法 
- * @author 小帅丶 
+ * @author 福淑
  * @类名称 HMACSHA1 
  * @remark 
  * @date 2018-05-31

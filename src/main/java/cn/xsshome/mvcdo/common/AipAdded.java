@@ -12,7 +12,7 @@ import com.baidu.aip.util.Base64Util;
 import com.baidu.aip.util.Util;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月15日
  * <p>Description: sdk未加入的接口封装</p>
  */

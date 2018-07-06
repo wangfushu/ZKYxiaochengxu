@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 /**
  * 文章内容
- * @author 小帅丶
+ * @author 福淑
  */
 public class ContentDO implements Serializable {
 	private static final long serialVersionUID = 1L;

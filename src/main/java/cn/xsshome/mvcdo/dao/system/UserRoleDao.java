@@ -11,7 +11,7 @@ import cn.xsshome.mvcdo.pojo.system.UserRoleDO;
 
 /**
  * 用户与角色对应关系
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Mapper

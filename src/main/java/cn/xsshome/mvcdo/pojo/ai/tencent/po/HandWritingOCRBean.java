@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.annotation.JSONField;
 /**
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月4日
  * <p>Description: 优图手写文字识别bean</p>
  */

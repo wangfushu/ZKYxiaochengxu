@@ -3,7 +3,7 @@ package cn.xsshome.mvcdo.util;
 import java.util.Date;
 /**
  * 全局响应对象
- * @author 小帅丶
+ * @author 福淑
  */
 public class WholeResponse{
 	private String logId;

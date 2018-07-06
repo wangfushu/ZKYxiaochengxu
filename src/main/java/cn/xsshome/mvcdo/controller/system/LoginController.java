@@ -27,7 +27,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  * 登录跳转Controller
- * @author 小帅丶
+ * @author 福淑
  */
 @Controller
 @RequestMapping(value="/mvcdo")

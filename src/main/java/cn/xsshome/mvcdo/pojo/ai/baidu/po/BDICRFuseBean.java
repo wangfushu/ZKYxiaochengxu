@@ -7,7 +7,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * 接口返回的对象 针对于logo、animal、plant、ingredient、car通用
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月10日
  * <p>Description: logo、animal、plant、ingredient、car融合对象</p>
  */

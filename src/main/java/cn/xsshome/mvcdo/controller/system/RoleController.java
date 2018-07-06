@@ -26,7 +26,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 角色管理Controller
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年3月9日
  */
 @Controller
@@ -40,7 +40,7 @@ public class RoleController {
 	 * 跳转角色管理页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/index")
@@ -52,7 +52,7 @@ public class RoleController {
 	 * 加载角色数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="listRole")
@@ -70,7 +70,7 @@ public class RoleController {
 	 * 跳转角色添加页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/addRole")
@@ -82,7 +82,7 @@ public class RoleController {
 	 * 保存角色数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="saveRole")
@@ -107,7 +107,7 @@ public class RoleController {
 	 * 角色编辑页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/editRole/{id}",method=RequestMethod.GET)
@@ -126,7 +126,7 @@ public class RoleController {
 	 * 角色更新
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/updateRole")
@@ -152,7 +152,7 @@ public class RoleController {
 	 * 角色删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/removeRole")
@@ -178,7 +178,7 @@ public class RoleController {
 	 * 角色批量删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/batchRemoveRole")

@@ -1,6 +1,6 @@
 package cn.xsshome.mvcdo.vo;
 /**
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月4日
  * <p>Description: 手势识别返回页面的对象</p>
  */

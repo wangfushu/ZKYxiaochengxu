@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import cn.xsshome.mvcdo.pojo.system.WeChatUserInfoDO;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月26日
  * <p>Description: Mapper</p>
  */

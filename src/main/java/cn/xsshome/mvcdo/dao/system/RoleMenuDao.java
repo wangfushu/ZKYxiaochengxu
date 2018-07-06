@@ -11,7 +11,7 @@ import cn.xsshome.mvcdo.pojo.system.RoleMenuDO;
 
 /**
  * 角色与菜单对应关系
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Mapper

@@ -29,7 +29,7 @@ import cn.xsshome.mvcdo.util.WholeResponse;
 
 /**
  * 部门管理
- * @author 小帅丶
+ * @author 福淑
  *
  */
 @Controller
@@ -48,7 +48,7 @@ public class DeptController {
 	 * 加载部门数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="listDept")
@@ -67,7 +67,7 @@ public class DeptController {
 	 * 跳转部门添加页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/addDept/{pId}")
@@ -89,7 +89,7 @@ public class DeptController {
 	 * 保存部门数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="saveDept")
@@ -114,7 +114,7 @@ public class DeptController {
 	 * 部门编辑页面
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/editDept/{id}",method=RequestMethod.GET)
@@ -139,7 +139,7 @@ public class DeptController {
 	 * 部门更新
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/updateDept")
@@ -165,7 +165,7 @@ public class DeptController {
 	 * 菜单删除
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/removeDept")
@@ -191,7 +191,7 @@ public class DeptController {
 	 * 加载部门tree数据
 	 * @param request
 	 * @param response
-	 * @author 小帅丶
+	 * @author 福淑
 	 * @return
 	 */
 	@RequestMapping(value="/tree")

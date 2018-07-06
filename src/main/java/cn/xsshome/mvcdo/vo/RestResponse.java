@@ -2,7 +2,7 @@ package cn.xsshome.mvcdo.vo;
 
 /**
  * 百度响应基类
- * @author 小帅丶
+ * @author 福淑
  * @create 2018-02-02 11:51
  **/
 public class RestResponse {

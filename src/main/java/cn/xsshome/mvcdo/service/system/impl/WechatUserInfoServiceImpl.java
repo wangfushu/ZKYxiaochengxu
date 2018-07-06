@@ -11,7 +11,7 @@ import cn.xsshome.mvcdo.pojo.system.WeChatUserInfoDO;
 import cn.xsshome.mvcdo.service.system.WechatUserInfoService;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月26日
  * <p>Description: 微信用户管理</p>
  */

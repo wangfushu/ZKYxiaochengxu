@@ -7,7 +7,7 @@ import cn.xsshome.mvcdo.pojo.system.MenuDO;
 
 /**
  * 菜单接口类
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public interface MenuService {

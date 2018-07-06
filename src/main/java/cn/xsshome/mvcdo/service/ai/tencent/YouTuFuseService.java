@@ -7,7 +7,7 @@ import cn.xsshome.mvcdo.pojo.ai.tencent.dbo.YouTuDetectFuseDO;
 
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月5日
  * <p>Description: 优图接口类</p>
  */

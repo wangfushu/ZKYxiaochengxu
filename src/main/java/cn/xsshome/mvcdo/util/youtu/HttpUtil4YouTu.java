@@ -17,7 +17,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;  
 import javax.net.ssl.X509TrustManager; 
 /**
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月31日
  * <p>Description: 优图http工具类需要ssl验证</p>
  */

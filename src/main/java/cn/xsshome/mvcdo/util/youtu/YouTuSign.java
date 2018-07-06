@@ -6,7 +6,7 @@ import cn.xsshome.taip.util.Base64Util;
 
 /** 
  * 获取Authorization 
- * @author 小帅丶 
+ * @author 福淑
  * @类名称  Sign 
  * @remark  
  * @date  2018-05-31

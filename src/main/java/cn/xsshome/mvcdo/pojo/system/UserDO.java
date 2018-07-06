@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 /**
  * 系统用户表
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public class UserDO {

@@ -12,7 +12,7 @@ import cn.xsshome.mvcdo.pojo.system.UserDO;
 
 /**
  * 用户接口类
- * @author 小帅丶
+ * @author 福淑
  *
  */
 public interface UserService {

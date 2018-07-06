@@ -3,7 +3,7 @@ package cn.xsshome.mvcdo.pojo.ai.baidu.po;
 import java.util.List;
 /**
  * 人脸V3对比Bean
- * @author 小帅丶
+ * @author 福淑
  */
 public class FaceV3MatchBean {
     private int error_code;
@@ -67,7 +67,7 @@ public class FaceV3MatchBean {
         
     }
     /**
-     * @author 小帅丶
+     * @author 福淑
      *
      */
     public static class Face_list{

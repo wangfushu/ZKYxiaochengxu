@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.pojo.ai.baidu.dbo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月29日
  * <p>Description: 银行卡对象</p>
  */

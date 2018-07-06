@@ -1,7 +1,7 @@
 package cn.xsshome.mvcdo.pojo.ai.baidu.dbo;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年5月10日
  * <p>Description: 针对于logo、animal、plant、ingredient、car通用</p>
  */

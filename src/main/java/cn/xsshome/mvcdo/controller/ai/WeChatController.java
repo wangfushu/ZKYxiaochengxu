@@ -26,7 +26,7 @@ import cn.xsshome.mvcdo.util.Query;
 import cn.xsshome.mvcdo.util.WholeResponse;
 /**
  * 
- * @author 小帅丶
+ * @author 福淑
  * @date 2018年6月26日
  * <p>Description: 微信用户管理后台</p>
  */
