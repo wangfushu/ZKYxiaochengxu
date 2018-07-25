@@ -125,6 +125,7 @@ public class BDImageClassifyRestController {
 	            String imagePath = filePath+fileName;
 	            HashMap<String, String> option = new HashMap<String, String>();
 	            option.put("top_num", "1");
+	            option.put("baike_num", "1");
 	            if(apiType.equals("dish")){
 		            JSONObject jsonObject = aipAdded.dishDetect(imagePath, option);
 		            BDICRDishBean bdDishJson = com.alibaba.fastjson.JSONObject.parseObject(jsonObject.toString(), BDICRDishBean.class);
