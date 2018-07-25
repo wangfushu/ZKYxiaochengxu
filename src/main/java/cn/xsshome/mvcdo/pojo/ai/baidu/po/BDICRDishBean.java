@@ -4,8 +4,8 @@ import java.util.List;
 /**
  *
  * @author 小帅丶
- * @date 2018年5月9日
- * <p>Description: 菜品识别Bean </p>
+ * @date 2018年7月25日
+ * <p>Description: 菜品识别Bean 增加百科内容</p>
  */
 public class BDICRDishBean {
 	private long log_id;
@@ -41,6 +41,7 @@ public class BDICRDishBean {
 		private boolean has_calorie;
 		private String calorie;
 		private String name;
+		private BaiKeInfo baike_info;
 		public String getProbability() {
 			return probability;
 		}
@@ -64,6 +65,35 @@ public class BDICRDishBean {
 		}
 		public void setName(String name) {
 			this.name = name;
+		}
+		public BaiKeInfo getBaike_info() {
+			return baike_info;
+		}
+		public void setBaike_info(BaiKeInfo baike_info) {
+			this.baike_info = baike_info;
+		}
+	}
+	public static class BaiKeInfo{
+		private String baike_url;
+		private String image_url;
+		private String description;
+		public String getBaike_url() {
+			return baike_url;
+		}
+		public void setBaike_url(String baike_url) {
+			this.baike_url = baike_url;
+		}
+		public String getImage_url() {
+			return image_url;
+		}
+		public void setImage_url(String image_url) {
+			this.image_url = image_url;
+		}
+		public String getDescription() {
+			return description;
+		}
+		public void setDescription(String description) {
+			this.description = description;
 		}
 		
 	}

@@ -109,7 +109,7 @@ public class BDImageClassifyRestController {
 	                 logger.info("=====接口返回的内容:"+resultData);
 	                 PrintUtil.printJson(response,resultData);
 				}
-			}else if (clientType!=null&&clientType.equals("wcs")) {
+			}else if (clientType!=null&&clientType.equals("wsc")) {
 				String authCode = request.getParameter("authCode");
             	if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
             		BDDishResponse bdDishResponse = new BDDishResponse();
@@ -119,6 +119,13 @@ public class BDImageClassifyRestController {
                     logger.info("=====接口返回的内容:"+resultData);
                     PrintUtil.printJson(response,resultData);
             	}
+			}else{
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+				 bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                 resultData = JSON.toJSONString(bdDishResponse);
+                 logger.info("=====接口返回的内容:"+resultData);
+                 PrintUtil.printJson(response,resultData);
 			}
 				FileUtil.uploadFile(file.getBytes(),filePath,fileName);
 				 //图片的本地路径
@@ -353,6 +360,9 @@ public class BDImageClassifyRestController {
 			bdicrDishDO.setProbability(bdDishJson.getResult().get(0).getProbability());
 			bdicrDishDO.setImagePath(dbPath);
 			bdicrDishDO.setEnterType(clientType);
+			bdicrDishDO.setBaikeUrl(bdDishJson.getResult().get(0).getBaike_info().getBaike_url());
+			bdicrDishDO.setImageUrl(bdDishJson.getResult().get(0).getBaike_info().getImage_url());
+			bdicrDishDO.setDescription(bdDishJson.getResult().get(0).getBaike_info().getDescription());
 			int result = bdicrDetectService.saveDish(bdicrDishDO);
 			BDDishResponse bdDishResponse = new BDDishResponse();
 			bdDishResponse.setCode(BDConstant.BD_SUCCESS.getCode().toString());
@@ -360,6 +370,9 @@ public class BDImageClassifyRestController {
 			bdDishResponse.setCalorie(bdDishJson.getResult().get(0).getCalorie()+"KJ/100g");
 			bdDishResponse.setHasCalorie(bdDishJson.getResult().get(0).isHas_calorie()?"是":"否");
 			bdDishResponse.setDishName(bdDishJson.getResult().get(0).getName());
+			bdDishResponse.setBaikeUrl(bdDishJson.getResult().get(0).getBaike_info().getBaike_url());
+			bdDishResponse.setImageUrl(bdDishJson.getResult().get(0).getBaike_info().getImage_url());
+			bdDishResponse.setDescription(bdDishJson.getResult().get(0).getBaike_info().getDescription());
 			bdDishResponse.setProbability(getPercent(Double.parseDouble(bdDishJson.getResult().get(0).getProbability())*100));
 			logger.info("====保存成功了："+result);
 			resultData = JSON.toJSONString(bdDishResponse);

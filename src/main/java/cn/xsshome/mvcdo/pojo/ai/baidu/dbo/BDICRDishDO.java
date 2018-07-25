@@ -50,6 +50,18 @@ public class BDICRDishDO {
 	 * 入口类型 web wcs
 	 */
 	private String enterType;
+	/**
+	 * 百度百科url
+	 */
+	private String baikeUrl;
+	/**
+	 * 百科图片链接
+	 */
+	private String imageUrl;
+	/**
+	 * 百科内容描述
+	 */
+	private String description;
 	public Long getIcrId() {
 		return icrId;
 	}
@@ -115,6 +127,24 @@ public class BDICRDishDO {
 	}
 	public void setEnterType(String enterType) {
 		this.enterType = enterType;
+	}
+	public String getBaikeUrl() {
+		return baikeUrl;
+	}
+	public void setBaikeUrl(String baikeUrl) {
+		this.baikeUrl = baikeUrl;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

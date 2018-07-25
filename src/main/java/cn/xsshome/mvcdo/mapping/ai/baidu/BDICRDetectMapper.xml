@@ -3,12 +3,12 @@
 <mapper namespace="cn.xsshome.mvcdo.dao.ai.baidu.BDICRDetectDao">
 	<!-- 查询单个对象菜品 -->
 	<select id="getDish" resultType="cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRDishDO">
-		select icrId,logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType from ai_bd_dish where icrId = #{icrId} 
+		select icrId,logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType,baikeUrl,imageUrl,description from ai_bd_dish where icrId = #{icrId} 
 	</select>
 	<!-- 查询所有菜品 -->
 	<select id="listDish" resultType="cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRDishDO">
 	select
-	icrId,logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType
+	icrId,logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType,baikeUrl,imageUrl,description
 	from ai_bd_dish
 	<where>
 		<if test="dishName != null and dishName != ''"> and dishName = #{dishName} </if>
@@ -42,7 +42,7 @@
 	<insert id="saveDish" parameterType="cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRDishDO" useGeneratedKeys="true" keyProperty="icrId">
 		insert into ai_bd_dish
 		(
-			logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType
+			logId,resultNum,calorie,hasCalorie,dishName,probability,openId,nikeName,imagePath,enterType,baikeUrl,imageUrl,description
 		)
 		values
 		(
@@ -55,7 +55,10 @@
 			#{openId},
 			#{nikeName},
 			#{imagePath},
-			#{enterType}
+			#{enterType},
+			#{baikeUrl},
+			#{imageUrl},
+			#{description}
 		)
 	</insert>
 	<!-- 单个删除菜品 -->
