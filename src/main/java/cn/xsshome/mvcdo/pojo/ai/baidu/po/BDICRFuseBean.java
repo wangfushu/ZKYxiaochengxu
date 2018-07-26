@@ -5,6 +5,7 @@ import java.util.List;
 import com.alibaba.fastjson.annotation.JSONField;
 
 
+
 /**
  * 接口返回的对象 针对于logo、animal、plant、ingredient、car通用
  * @author 小帅丶
@@ -56,6 +57,14 @@ public class BDICRFuseBean {
 		@JSONField(name="type")
 		private String logoType;
 		private LocationResult location;
+		private BaiKeInfo baike_info;
+		
+		public BaiKeInfo getBaike_info() {
+			return baike_info;
+		}
+		public void setBaike_info(BaiKeInfo baike_info) {
+			this.baike_info = baike_info;
+		}
 		public String getProbability() {
 			return probability;
 		}
@@ -122,6 +131,30 @@ public class BDICRFuseBean {
 		}
 		public void setLeft(Integer left) {
 			this.left = left;
+		}
+		
+	}
+	public static class BaiKeInfo{
+		private String baike_url;
+		private String image_url;
+		private String description;
+		public String getBaike_url() {
+			return baike_url;
+		}
+		public void setBaike_url(String baike_url) {
+			this.baike_url = baike_url;
+		}
+		public String getImage_url() {
+			return image_url;
+		}
+		public void setImage_url(String image_url) {
+			this.image_url = image_url;
+		}
+		public String getDescription() {
+			return description;
+		}
+		public void setDescription(String description) {
+			this.description = description;
 		}
 		
 	}

@@ -192,6 +192,11 @@ public class BDImageClassifyRestController {
     			fuseResponse.setMsg(BDConstant.BD_SUCCESS.getMsg());
     			fuseResponse.setIcrName(bdicrFuseBean.getResult().get(0).getName());
     			fuseResponse.setScore(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getScore())*100));
+    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+    			}
     			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
     			bdicrFuseDO.setOpenId(openId);
     			bdicrFuseDO.setNikeName(nickName);
@@ -204,6 +209,11 @@ public class BDImageClassifyRestController {
     			bdicrFuseDO.setScore(bdicrFuseBean.getResult().get(0).getScore());
     			bdicrFuseDO.setImagePath(dbPath);
     			bdicrFuseDO.setEnterType(clientType);
+    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+    			}
     			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
     			logger.info("====保存成功了："+result);
     			resultData = JSON.toJSONString(fuseResponse);
@@ -222,6 +232,11 @@ public class BDImageClassifyRestController {
 	    			fuseResponse.setMsg(BDConstant.BD_SUCCESS.getMsg());
 	    			fuseResponse.setIcrName(bdicrFuseBean.getResult().get(0).getName());
 	    			fuseResponse.setProbability(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getProbability())*100));
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
 	    			bdicrFuseDO.setOpenId(openId);
 	    			bdicrFuseDO.setNikeName(nickName);
@@ -237,6 +252,11 @@ public class BDImageClassifyRestController {
 	    			bdicrFuseDO.setLogoType(String.valueOf(bdicrFuseBean.getResult().get(0).getLogoType()));
 	    			bdicrFuseDO.setImagePath(dbPath);
 	    			bdicrFuseDO.setEnterType(clientType);
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
 	    			logger.info("====保存成功了："+result);
 	    			resultData = JSON.toJSONString(fuseResponse);
@@ -256,6 +276,11 @@ public class BDImageClassifyRestController {
 	    			fuseResponse.setScore(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getScore())*100));
 	    			fuseResponse.setColorResult(bdicrFuseBean.getColor_result());
 	    			fuseResponse.setYear(bdicrFuseBean.getResult().get(0).getYear());
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
 	    			bdicrFuseDO.setOpenId(openId);
 	    			bdicrFuseDO.setNikeName(nickName);
@@ -271,6 +296,11 @@ public class BDImageClassifyRestController {
 	    			bdicrFuseDO.setColorResult(bdicrFuseBean.getColor_result());
 	    			bdicrFuseDO.setImagePath(dbPath);
 	    			bdicrFuseDO.setEnterType(clientType);
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
 	    			logger.info("====保存成功了："+result);
 	    			resultData = JSON.toJSONString(fuseResponse);

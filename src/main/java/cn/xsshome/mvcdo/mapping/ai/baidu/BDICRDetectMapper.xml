@@ -76,7 +76,7 @@
 	<!-- 查询融合对象图像识别数据 -->
 	<select id="listFuse" resultType="cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRFuseDO">
 	select
-	icrId,logId,resultNum,icrName,score,Pyear,colorResult,localWidth,localHeight,localTop,localLeft,logoType,probability,imagePath,openId,nikeName,enterType,apiType
+	icrId,logId,resultNum,icrName,score,Pyear,colorResult,localWidth,localHeight,localTop,localLeft,logoType,probability,imagePath,openId,nikeName,enterType,apiType,baikeUrl,imageUrl,description
 	from ai_bd_icrfuse
 	<where>
 		<if test="apiType != null and apiType != ''"> and apiType = #{apiType} </if>
@@ -110,7 +110,7 @@
 	<insert id="saveFuse" parameterType="cn.xsshome.mvcdo.pojo.ai.baidu.dbo.BDICRFuseDO" useGeneratedKeys="true" keyProperty="icrId">
 		insert into ai_bd_icrfuse
 		(
-			logId,resultNum,icrName,score,Pyear,colorResult,localWidth,localHeight,localTop,localLeft,logoType,probability,imagePath,openId,nikeName,enterType,apiType
+			logId,resultNum,icrName,score,Pyear,colorResult,localWidth,localHeight,localTop,localLeft,logoType,probability,imagePath,openId,nikeName,enterType,apiType,baikeUrl,imageUrl,description
 		)
 		values
 		(
@@ -130,7 +130,10 @@
 			#{openId},
 			#{nikeName},
 			#{enterType},
-			#{apiType}
+			#{apiType},
+			#{baikeUrl},
+			#{imageUrl},
+			#{description}
 		)
 	</insert>
 	<!-- 单个删除融合对象图像识别 -->
