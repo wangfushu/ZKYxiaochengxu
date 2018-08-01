@@ -141,7 +141,7 @@ public class BDImageClassifyRestController {
 		            resultData = getResultDishData(bdDishJson,apiType,clientType,dbPath,openId,nickName);
 		            logger.info("=====接口返回的内容:"+resultData);
 		            PrintUtil.printJson(response,resultData);
-	            } else if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("logo")||apiType.equals("car")) {
+	            } else if (apiType.equals("flower")||apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("logo")||apiType.equals("car")) {
 	            	JSONObject jsonObject = getFuseObject(imagePath,apiType,option);
 	            	BDICRFuseBean bdicrFuseBean = com.alibaba.fastjson.JSONObject.parseObject(jsonObject.toString(), BDICRFuseBean.class);
 	            	dbPath += fileName;
@@ -179,8 +179,8 @@ public class BDImageClassifyRestController {
      */
     private String getResultFuseData(BDICRFuseBean bdicrFuseBean, String apiType, String clientType, String dbPath,String openId, String nickName) {
     	String resultData="";
-    	if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")) {
-    		if(bdicrFuseBean.getResult().get(0).getName().equals("非动物")||bdicrFuseBean.getResult().get(0).getName().equals("非植物")||bdicrFuseBean.getResult().get(0).getName().equals("非果蔬食材")){
+    	if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("flower")) {
+    		if(bdicrFuseBean.getResult().get(0).getName().equals("非花")||bdicrFuseBean.getResult().get(0).getName().equals("非动物")||bdicrFuseBean.getResult().get(0).getName().equals("非植物")||bdicrFuseBean.getResult().get(0).getName().equals("非果蔬食材")){
     			BDDishResponse bdDishResponse = new BDDishResponse();
         		bdDishResponse.setCode(BDConstant.BD_NOFACE.getCode().toString());
         		String msg = getNoMsg(apiType);
@@ -331,6 +331,8 @@ public class BDImageClassifyRestController {
 			msg ="未能识别出logo Sorry";
 		}else if (apiType.equals("car")) {
 			msg ="未能识别出汽车 Sorry";
+		} else if (apiType.equals("flower")) {
+			msg ="未能识别出花卉 Sorry";
 		} else {
 			msg ="未能识别出内容 Sorry";
 		}
@@ -359,6 +361,9 @@ public class BDImageClassifyRestController {
     	}
     	if(apiType.equals("logo")){
     		jsonObject = aipAdded.logoSearch(imagePath, option);
+    	}
+    	if(apiType.equals("flower")){
+    		jsonObject = aipAdded.flowerDetect(imagePath, option);
     	}
     	logger.info(apiType+"==百度服务返回=======\n"+jsonObject.toString(2));
 		return jsonObject;
