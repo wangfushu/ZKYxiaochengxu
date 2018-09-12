@@ -41,7 +41,7 @@ import cn.xsshome.taip.face.TAipFace;
 import cn.xsshome.taip.ptu.TAipPtu;
 /**
  * @author 小帅丶
- * @date 2018年5月29日
+ * @date 2018年9月12日 新增图片特效接口
  * <p>Description: 腾讯ai人脸融合 人脸对比</p>
  */
 @Controller
