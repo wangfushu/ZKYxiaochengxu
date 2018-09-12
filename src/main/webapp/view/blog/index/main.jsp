@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <jsp:include page="/view/blog/index/include_blog_nav.jsp"></jsp:include>
-   	<header class="intro-header" style="background-image: url('${ctx}/image/blog/home-bg.jpg')">
+   	<header class="intro-header" style="background-image: url('https://wximage-1251091977.cos.ap-beijing.myqcloud.com/xai/home-bg.jpeg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

@@ -103,7 +103,258 @@ public class TAIRestController {
             PrintUtil.printJson(response,resultData);
 		}
 	}
-	 @RequestMapping(value = "/uploadFA",method = {RequestMethod.POST})
+	/**
+	 * 人脸美妆接口
+	 * @param file
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/facecosmetic",method={RequestMethod.POST})
+	public void uoloadFaceCosmetic(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+		String resultData = "";	
+		String clientType = request.getParameter("clientType");
+		int cosmetic = Integer.parseInt(request.getParameter("model"));
+		logger.info("=======访问的IP"+request.getRemoteAddr()+"======访问的User-Agent:"+request.getHeader("User-Agent"));
+		logger.info("=======访问的类型"+clientType+"=======模板id："+cosmetic); 
+		try {
+			if(!clientType.equals("wsc")){
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_403.getCode().toString());
+				 bdDishResponse.setMsg("缺少必要参数");
+                resultData = JSON.toJSONString(bdDishResponse);
+                logger.info("=====接口返回的内容:"+resultData);
+                PrintUtil.printJson(response,resultData);
+			}else{
+				String authCode = request.getParameter("authCode");
+				if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
+					BDDishResponse bdDishResponse = new BDDishResponse();
+            		bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+            		bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                    resultData = JSON.toJSONString(bdDishResponse);
+                    logger.info("=====接口返回的内容:"+resultData);
+                    PrintUtil.printJson(response,resultData);
+				}else{
+					byte[] image = file.getBytes();
+					resultData = aipPtu.faceCosmetic(image, cosmetic);
+					JSONObject object = JSON.parseObject(resultData);
+					if(object.getInteger("ret")!=0){
+						QQSendEmailUtil.send_email("人脸美妆接口错误警报", "接口返回内容：\n"+resultData+"\n访问接口的ip："+request.getRemoteAddr(), AIConstant.EMAIL_ADDRESS);
+					}
+					PrintUtil.printJson(response, resultData);
+				}
+			}
+		} catch (Exception e) {
+			logger.info("人脸美妆接口出错了"+e.getMessage());
+			BDDishResponse bdDishResponse = new BDDishResponse();
+			bdDishResponse.setCode(BDConstant.BD_ERROR.getCode().toString());
+			bdDishResponse.setMsg(BDConstant.BD_ERROR.getMsg());
+            resultData = JSON.toJSONString(bdDishResponse);
+            System.out.println(resultData);
+            PrintUtil.printJson(response,resultData);
+		}
+	}
+	/**
+	 * 人脸变妆接口
+	 * @param file
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/facedecoration",method={RequestMethod.POST})
+	public void uoloadFaceDecoration(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+		String resultData = "";	
+		String clientType = request.getParameter("clientType");
+		int decoration = Integer.parseInt(request.getParameter("model"));
+		logger.info("=======访问的IP"+request.getRemoteAddr()+"======访问的User-Agent:"+request.getHeader("User-Agent"));
+		logger.info("=======访问的类型"+clientType+"=======模板id："+decoration); 
+		try {
+			if(!clientType.equals("wsc")){
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_403.getCode().toString());
+				 bdDishResponse.setMsg("缺少必要参数");
+                resultData = JSON.toJSONString(bdDishResponse);
+                logger.info("=====接口返回的内容:"+resultData);
+                PrintUtil.printJson(response,resultData);
+			}else{
+				String authCode = request.getParameter("authCode");
+				if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
+					BDDishResponse bdDishResponse = new BDDishResponse();
+            		bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+            		bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                    resultData = JSON.toJSONString(bdDishResponse);
+                    logger.info("=====接口返回的内容:"+resultData);
+                    PrintUtil.printJson(response,resultData);
+				}else{
+					byte[] image = file.getBytes();
+					resultData = aipPtu.faceDecoration(image, decoration);
+					JSONObject object = JSON.parseObject(resultData);
+					if(object.getInteger("ret")!=0){
+						QQSendEmailUtil.send_email("人脸变妆接口错误警报", "接口返回内容：\n"+resultData+"\n访问接口的ip："+request.getRemoteAddr(), AIConstant.EMAIL_ADDRESS);
+					}
+					PrintUtil.printJson(response, resultData);
+				}
+			}
+		} catch (Exception e) {
+			logger.info("人脸变妆接口出错了"+e.getMessage());
+			BDDishResponse bdDishResponse = new BDDishResponse();
+			bdDishResponse.setCode(BDConstant.BD_ERROR.getCode().toString());
+			bdDishResponse.setMsg(BDConstant.BD_ERROR.getMsg());
+            resultData = JSON.toJSONString(bdDishResponse);
+            System.out.println(resultData);
+            PrintUtil.printJson(response,resultData);
+		}
+	}
+	
+	/**
+	 * 人像滤镜接口
+	 * @param file
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/ptuimgfilter",method={RequestMethod.POST})
+	public void uploadPtuImgFilter(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+		String resultData = "";	
+		String clientType = request.getParameter("clientType");
+		int filter = Integer.parseInt(request.getParameter("model"));
+		logger.info("=======访问的IP"+request.getRemoteAddr()+"======访问的User-Agent:"+request.getHeader("User-Agent"));
+		logger.info("=======访问的类型"+clientType+"=======模板id："+filter); 
+		try {
+			if(!clientType.equals("wsc")){
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_403.getCode().toString());
+				 bdDishResponse.setMsg("缺少必要参数");
+                resultData = JSON.toJSONString(bdDishResponse);
+                logger.info("=====接口返回的内容:"+resultData);
+                PrintUtil.printJson(response,resultData);
+			}else{
+				String authCode = request.getParameter("authCode");
+				if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
+					BDDishResponse bdDishResponse = new BDDishResponse();
+            		bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+            		bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                    resultData = JSON.toJSONString(bdDishResponse);
+                    logger.info("=====接口返回的内容:"+resultData);
+                    PrintUtil.printJson(response,resultData);
+				}else{
+					byte[] image = file.getBytes();
+					resultData = aipPtu.imgFilter(image, filter);
+					JSONObject object = JSON.parseObject(resultData);
+					if(object.getInteger("ret")!=0){
+						QQSendEmailUtil.send_email("人像滤镜接口错误警报", "接口返回内容：\n"+resultData+"\n访问接口的ip："+request.getRemoteAddr(), AIConstant.EMAIL_ADDRESS);
+					}
+					PrintUtil.printJson(response, resultData);
+				}
+			}
+		} catch (Exception e) {
+			logger.info("人像滤镜接口出错了"+e.getMessage());
+			BDDishResponse bdDishResponse = new BDDishResponse();
+			bdDishResponse.setCode(BDConstant.BD_ERROR.getCode().toString());
+			bdDishResponse.setMsg(BDConstant.BD_ERROR.getMsg());
+            resultData = JSON.toJSONString(bdDishResponse);
+            System.out.println(resultData);
+            PrintUtil.printJson(response,resultData);
+		}
+	}
+	/**
+	 * 图片滤镜接口
+	 * @param file
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/visionimgfilter",method={RequestMethod.POST})
+	public void uploadVisionImgFilter(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+		String resultData = "";	
+		String clientType = request.getParameter("clientType");
+		int filter = Integer.parseInt(request.getParameter("model"));
+		logger.info("=======访问的IP"+request.getRemoteAddr()+"======访问的User-Agent:"+request.getHeader("User-Agent"));
+		logger.info("=======访问的类型"+clientType+"=======模板id："+filter); 
+		try {
+			if(!clientType.equals("wsc")){
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_403.getCode().toString());
+				 bdDishResponse.setMsg("缺少必要参数");
+                resultData = JSON.toJSONString(bdDishResponse);
+                logger.info("=====接口返回的内容:"+resultData);
+                PrintUtil.printJson(response,resultData);
+			}else{
+				String authCode = request.getParameter("authCode");
+				if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
+					BDDishResponse bdDishResponse = new BDDishResponse();
+            		bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+            		bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                    resultData = JSON.toJSONString(bdDishResponse);
+                    logger.info("=====接口返回的内容:"+resultData);
+                    PrintUtil.printJson(response,resultData);
+				}else{
+					byte[] image = file.getBytes();
+					resultData = aipPtu.visionImgfilter(image, filter,String.valueOf(System.currentTimeMillis()));
+					JSONObject object = JSON.parseObject(resultData);
+					if(object.getInteger("ret")!=0){
+						QQSendEmailUtil.send_email("图片滤镜接口错误警报", "接口返回内容：\n"+resultData+"\n访问接口的ip："+request.getRemoteAddr(), AIConstant.EMAIL_ADDRESS);
+					}
+					PrintUtil.printJson(response, resultData);
+				}
+			}
+		} catch (Exception e) {
+			logger.info("图片滤镜接口出错了"+e.getMessage());
+			BDDishResponse bdDishResponse = new BDDishResponse();
+			bdDishResponse.setCode(BDConstant.BD_ERROR.getCode().toString());
+			bdDishResponse.setMsg(BDConstant.BD_ERROR.getMsg());
+            resultData = JSON.toJSONString(bdDishResponse);
+            System.out.println(resultData);
+            PrintUtil.printJson(response,resultData);
+		}
+	}
+	/**
+	 * 大头贴接口
+	 * @param file
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value="/facesticker",method={RequestMethod.POST})
+	public void uploadFaceSticker(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+		String resultData = "";	
+		String clientType = request.getParameter("clientType");
+		int sticker = Integer.parseInt(request.getParameter("model"));
+		logger.info("=======访问的IP"+request.getRemoteAddr()+"======访问的User-Agent:"+request.getHeader("User-Agent"));
+		logger.info("=======访问的类型"+clientType+"=======模板id："+sticker); 
+		try {
+			if(!clientType.equals("wsc")){
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_403.getCode().toString());
+				 bdDishResponse.setMsg("缺少必要参数");
+                resultData = JSON.toJSONString(bdDishResponse);
+                logger.info("=====接口返回的内容:"+resultData);
+                PrintUtil.printJson(response,resultData);
+			}else{
+				String authCode = request.getParameter("authCode");
+				if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
+					BDDishResponse bdDishResponse = new BDDishResponse();
+            		bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+            		bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                    resultData = JSON.toJSONString(bdDishResponse);
+                    logger.info("=====接口返回的内容:"+resultData);
+                    PrintUtil.printJson(response,resultData);
+				}else{
+					byte[] image = file.getBytes();
+					resultData = aipPtu.faceSticker(image, sticker);
+					JSONObject object = JSON.parseObject(resultData);
+					if(object.getInteger("ret")!=0){
+						QQSendEmailUtil.send_email("大头贴接口错误警报", "接口返回内容：\n"+resultData+"\n访问接口的ip："+request.getRemoteAddr(), AIConstant.EMAIL_ADDRESS);
+					}
+					PrintUtil.printJson(response, resultData);
+				}
+			}
+		} catch (Exception e) {
+			logger.info("大头贴接口出错了"+e.getMessage());
+			BDDishResponse bdDishResponse = new BDDishResponse();
+			bdDishResponse.setCode(BDConstant.BD_ERROR.getCode().toString());
+			bdDishResponse.setMsg(BDConstant.BD_ERROR.getMsg());
+            resultData = JSON.toJSONString(bdDishResponse);
+            System.out.println(resultData);
+            PrintUtil.printJson(response,resultData);
+		}
+	}
+	@RequestMapping(value = "/uploadFA",method = {RequestMethod.POST})
 	public void uploadFA(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws Exception{
 		String resultData = "";
         String clientType = request.getParameter("clientType");

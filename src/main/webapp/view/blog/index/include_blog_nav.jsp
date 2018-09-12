@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/xai">主页</a></li>
 				<li><a href="<%=basePath%>rest/face/index">人脸检测</a></li>
-				<li><a href="/bd/icrBD/icrdetect">图像识别</a></li>
+				<li><a href="/bd/icrBD/icrdetect" onclick="noMethod();">图像识别</a></li>
 				<li><a href="/bd/ocrBD/ocrdetect">文字识别</a></li>
 			</ul>
 		</div>
