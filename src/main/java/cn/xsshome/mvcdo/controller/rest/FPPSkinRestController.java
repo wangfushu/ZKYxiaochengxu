@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Base64.Encoder;
 import java.util.Date;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestUtils;
@@ -25,7 +27,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSON;
 
 import cn.xsshome.mvcdo.common.AIConstant;
+import cn.xsshome.mvcdo.pojo.ai.fpp.dbo.FPPFaceDO;
 import cn.xsshome.mvcdo.pojo.ai.fpp.po.FacePPSkinBean;
+import cn.xsshome.mvcdo.service.ai.fpp.FPPFaceService;
 import cn.xsshome.mvcdo.util.FileUtil;
 import cn.xsshome.mvcdo.util.PrintUtil;
 import cn.xsshome.mvcdo.util.QQSendEmailUtil;
@@ -46,6 +50,8 @@ public class FPPSkinRestController {
 	private static final String API_SECRET = "";//应用apisecret
 	private static final String FACE_DETECT_URL = "https://api-cn.faceplusplus.com/facepp/v3/detect";//人脸检测接口地址
 	private static Logger logger = LoggerFactory.getLogger(FPPSkinRestController.class);
+	@Autowired
+	FPPFaceService fppFaceService;
 	/**
 	 * 肤质分析
 	 * @param file
@@ -57,7 +63,8 @@ public class FPPSkinRestController {
 	 */
 	 @RequestMapping(value = "/detect",method = {RequestMethod.POST})
 	 public String uploadFaceSkin(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException, Exception{
-		 String resultData = "";	
+		 	SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd  HH:mm:ss");
+		    String resultData = "";	
 			String clientType = request.getParameter("clientType");
 	        String openId = ServletRequestUtils.getStringParameter(request, "openId","");
 	        String nickName = ServletRequestUtils.getStringParameter(request, "nickName","");
@@ -147,6 +154,28 @@ public class FPPSkinRestController {
 	            		faceResponse.setAcne(acne+"");
 	            		faceResponse.setDarkCircle(darkCircle+"");
 	            		resultData = JSON.toJSONString(faceResponse);
+	            		FPPFaceDO fppFaceDODB = fppFaceService.getFPPFace(skinBean.getFaces().get(0).getFace_token());
+	            		if(null==fppFaceDODB){
+	            			FPPFaceDO fppFaceDO = new FPPFaceDO();
+		            		fppFaceDO.setFaceToken(skinBean.getFaces().get(0).getFace_token());
+		            		fppFaceDO.setGender(skinBean.getFaces().get(0).getAttributes().getGender().getValue());
+		            		fppFaceDO.setAge(skinBean.getFaces().get(0).getAttributes().getAge().getValue());
+		            		fppFaceDO.setSkinHealth(health+"");
+		            		fppFaceDO.setSkinStain(stain+"");
+		            		fppFaceDO.setSkinAcne(acne+"");
+		            		fppFaceDO.setSkinDarkCircle(darkCircle+"");
+		            		fppFaceDO.setOpenId(openId);
+		            		fppFaceDO.setNikeName(nickName);
+		            		fppFaceDO.setImagePath(dbPath);
+		            		fppFaceDO.setApiType("skin");
+		            		fppFaceDO.setEnterType(clientType);
+		            		fppFaceDO.setDetectDate(format.format(new Date()));
+		            		fppFaceService.saveFPPFace(fppFaceDO);
+	            		}else{
+	            			QQSendEmailUtil.send_email("FPP接口相同faceToken", 
+			            			"接口返回内容："+resultData+"\n"+"UserAgent:"+request.getHeader("User-Agent")+"\n"+"访问IP："+request.getRemoteAddr()+"\n"+"微信昵称："+URLDecoder.decode(nickName, "UTF-8"), 
+			            			AIConstant.EMAIL_ADDRESS);
+	            		}
 	            		PrintUtil.printJson(response,resultData);
 	            	}
 	            }
@@ -176,9 +205,7 @@ public class FPPSkinRestController {
 		String image_base64 = base64Encoder.encodeToString(FileUtil.readFileByBytes(imagePath));
 		String return_attributes = "gender,age,smiling,headpose,facequality,blur,eyestatus,emotion,ethnicity,beauty,mouthstatus,eyegaze,skinstatus";
 		String params = "api_key="+API_KEY+"&api_secret="+API_SECRET+"&image_base64="+URLEncoder.encode(image_base64,"utf-8")+"&return_attributes="+return_attributes;
-		System.out.println(params);
 		String result = HttpUtil.post(FACE_DETECT_URL, params);
-		System.out.println(result);
 		return result;
 	}
 }
