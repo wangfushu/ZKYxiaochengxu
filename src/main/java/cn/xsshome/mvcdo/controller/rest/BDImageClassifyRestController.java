@@ -109,7 +109,7 @@ public class BDImageClassifyRestController {
 	                 logger.info("=====接口返回的内容:"+resultData);
 	                 PrintUtil.printJson(response,resultData);
 				}
-			}else if (clientType!=null&&clientType.equals("wcs")) {
+			}else if (clientType!=null&&clientType.equals("wsc")) {
 				String authCode = request.getParameter("authCode");
             	if(null==authCode||!authCode.equals(AIConstant.AUTH_CODE)){
             		BDDishResponse bdDishResponse = new BDDishResponse();
@@ -119,12 +119,20 @@ public class BDImageClassifyRestController {
                     logger.info("=====接口返回的内容:"+resultData);
                     PrintUtil.printJson(response,resultData);
             	}
+			}else{
+				 BDDishResponse bdDishResponse = new BDDishResponse();
+				 bdDishResponse.setCode(BDConstant.BD_NOTFUND.getCode().toString());
+				 bdDishResponse.setMsg(BDConstant.BD_NOTFUND.getMsg());
+                 resultData = JSON.toJSONString(bdDishResponse);
+                 logger.info("=====接口返回的内容:"+resultData);
+                 PrintUtil.printJson(response,resultData);
 			}
 				FileUtil.uploadFile(file.getBytes(),filePath,fileName);
 				 //图片的本地路径
 	            String imagePath = filePath+fileName;
 	            HashMap<String, String> option = new HashMap<String, String>();
 	            option.put("top_num", "1");
+	            option.put("baike_num", "1");
 	            if(apiType.equals("dish")){
 		            JSONObject jsonObject = aipAdded.dishDetect(imagePath, option);
 		            BDICRDishBean bdDishJson = com.alibaba.fastjson.JSONObject.parseObject(jsonObject.toString(), BDICRDishBean.class);
@@ -133,7 +141,7 @@ public class BDImageClassifyRestController {
 		            resultData = getResultDishData(bdDishJson,apiType,clientType,dbPath,openId,nickName);
 		            logger.info("=====接口返回的内容:"+resultData);
 		            PrintUtil.printJson(response,resultData);
-	            } else if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("logo")||apiType.equals("car")) {
+	            } else if (apiType.equals("flower")||apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("logo")||apiType.equals("car")) {
 	            	JSONObject jsonObject = getFuseObject(imagePath,apiType,option);
 	            	BDICRFuseBean bdicrFuseBean = com.alibaba.fastjson.JSONObject.parseObject(jsonObject.toString(), BDICRFuseBean.class);
 	            	dbPath += fileName;
@@ -171,8 +179,8 @@ public class BDImageClassifyRestController {
      */
     private String getResultFuseData(BDICRFuseBean bdicrFuseBean, String apiType, String clientType, String dbPath,String openId, String nickName) {
     	String resultData="";
-    	if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")) {
-    		if(bdicrFuseBean.getResult().get(0).getName().equals("非动物")||bdicrFuseBean.getResult().get(0).getName().equals("非植物")||bdicrFuseBean.getResult().get(0).getName().equals("非果蔬食材")){
+    	if (apiType.equals("plant")||apiType.equals("animal")||apiType.equals("ingredient")||apiType.equals("flower")) {
+    		if(bdicrFuseBean.getResult().get(0).getName().equals("非花")||bdicrFuseBean.getResult().get(0).getName().equals("非动物")||bdicrFuseBean.getResult().get(0).getName().equals("非植物")||bdicrFuseBean.getResult().get(0).getName().equals("非果蔬食材")){
     			BDDishResponse bdDishResponse = new BDDishResponse();
         		bdDishResponse.setCode(BDConstant.BD_NOFACE.getCode().toString());
         		String msg = getNoMsg(apiType);
@@ -184,6 +192,11 @@ public class BDImageClassifyRestController {
     			fuseResponse.setMsg(BDConstant.BD_SUCCESS.getMsg());
     			fuseResponse.setIcrName(bdicrFuseBean.getResult().get(0).getName());
     			fuseResponse.setScore(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getScore())*100));
+    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+    			}
     			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
     			bdicrFuseDO.setOpenId(openId);
     			bdicrFuseDO.setNikeName(nickName);
@@ -196,6 +209,11 @@ public class BDImageClassifyRestController {
     			bdicrFuseDO.setScore(bdicrFuseBean.getResult().get(0).getScore());
     			bdicrFuseDO.setImagePath(dbPath);
     			bdicrFuseDO.setEnterType(clientType);
+    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+    			}
     			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
     			logger.info("====保存成功了："+result);
     			resultData = JSON.toJSONString(fuseResponse);
@@ -214,6 +232,11 @@ public class BDImageClassifyRestController {
 	    			fuseResponse.setMsg(BDConstant.BD_SUCCESS.getMsg());
 	    			fuseResponse.setIcrName(bdicrFuseBean.getResult().get(0).getName());
 	    			fuseResponse.setProbability(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getProbability())*100));
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
 	    			bdicrFuseDO.setOpenId(openId);
 	    			bdicrFuseDO.setNikeName(nickName);
@@ -229,6 +252,11 @@ public class BDImageClassifyRestController {
 	    			bdicrFuseDO.setLogoType(String.valueOf(bdicrFuseBean.getResult().get(0).getLogoType()));
 	    			bdicrFuseDO.setImagePath(dbPath);
 	    			bdicrFuseDO.setEnterType(clientType);
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
 	    			logger.info("====保存成功了："+result);
 	    			resultData = JSON.toJSONString(fuseResponse);
@@ -248,6 +276,11 @@ public class BDImageClassifyRestController {
 	    			fuseResponse.setScore(getPercent(Double.parseDouble(bdicrFuseBean.getResult().get(0).getScore())*100));
 	    			fuseResponse.setColorResult(bdicrFuseBean.getColor_result());
 	    			fuseResponse.setYear(bdicrFuseBean.getResult().get(0).getYear());
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				fuseResponse.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				fuseResponse.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				fuseResponse.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			BDICRFuseDO bdicrFuseDO = new BDICRFuseDO();
 	    			bdicrFuseDO.setOpenId(openId);
 	    			bdicrFuseDO.setNikeName(nickName);
@@ -263,6 +296,11 @@ public class BDImageClassifyRestController {
 	    			bdicrFuseDO.setColorResult(bdicrFuseBean.getColor_result());
 	    			bdicrFuseDO.setImagePath(dbPath);
 	    			bdicrFuseDO.setEnterType(clientType);
+	    			if(bdicrFuseBean.getResult().get(0).getBaike_info()!=null){
+	    				bdicrFuseDO.setBaikeUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getBaike_url());
+	    				bdicrFuseDO.setImageUrl(bdicrFuseBean.getResult().get(0).getBaike_info().getImage_url());
+	    				bdicrFuseDO.setDescription(bdicrFuseBean.getResult().get(0).getBaike_info().getDescription());
+	    			}
 	    			int result = bdicrDetectService.saveFuse(bdicrFuseDO);
 	    			logger.info("====保存成功了："+result);
 	    			resultData = JSON.toJSONString(fuseResponse);
@@ -293,6 +331,8 @@ public class BDImageClassifyRestController {
 			msg ="未能识别出logo Sorry";
 		}else if (apiType.equals("car")) {
 			msg ="未能识别出汽车 Sorry";
+		} else if (apiType.equals("flower")) {
+			msg ="未能识别出花卉 Sorry";
 		} else {
 			msg ="未能识别出内容 Sorry";
 		}
@@ -321,6 +361,9 @@ public class BDImageClassifyRestController {
     	}
     	if(apiType.equals("logo")){
     		jsonObject = aipAdded.logoSearch(imagePath, option);
+    	}
+    	if(apiType.equals("flower")){
+    		jsonObject = aipAdded.flowerDetect(imagePath, option);
     	}
     	logger.info(apiType+"==百度服务返回=======\n"+jsonObject.toString(2));
 		return jsonObject;
@@ -352,6 +395,9 @@ public class BDImageClassifyRestController {
 			bdicrDishDO.setProbability(bdDishJson.getResult().get(0).getProbability());
 			bdicrDishDO.setImagePath(dbPath);
 			bdicrDishDO.setEnterType(clientType);
+			bdicrDishDO.setBaikeUrl(bdDishJson.getResult().get(0).getBaike_info().getBaike_url());
+			bdicrDishDO.setImageUrl(bdDishJson.getResult().get(0).getBaike_info().getImage_url());
+			bdicrDishDO.setDescription(bdDishJson.getResult().get(0).getBaike_info().getDescription());
 			int result = bdicrDetectService.saveDish(bdicrDishDO);
 			BDDishResponse bdDishResponse = new BDDishResponse();
 			bdDishResponse.setCode(BDConstant.BD_SUCCESS.getCode().toString());
@@ -359,6 +405,9 @@ public class BDImageClassifyRestController {
 			bdDishResponse.setCalorie(bdDishJson.getResult().get(0).getCalorie()+"KJ/100g");
 			bdDishResponse.setHasCalorie(bdDishJson.getResult().get(0).isHas_calorie()?"是":"否");
 			bdDishResponse.setDishName(bdDishJson.getResult().get(0).getName());
+			bdDishResponse.setBaikeUrl(bdDishJson.getResult().get(0).getBaike_info().getBaike_url());
+			bdDishResponse.setImageUrl(bdDishJson.getResult().get(0).getBaike_info().getImage_url());
+			bdDishResponse.setDescription(bdDishJson.getResult().get(0).getBaike_info().getDescription());
 			bdDishResponse.setProbability(getPercent(Double.parseDouble(bdDishJson.getResult().get(0).getProbability())*100));
 			logger.info("====保存成功了："+result);
 			resultData = JSON.toJSONString(bdDishResponse);

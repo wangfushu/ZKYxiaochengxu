@@ -19,6 +19,8 @@ import com.baidu.aip.util.Util;
 public class AipAdded extends AipImageClassify{
 	//食材识别接口
 	static final String INGREDIENT_URL="https://aip.baidubce.com/rest/2.0/image-classify/v1/classify/ingredient";
+	//花卉识别接口
+	static final String FLOWER_URL="https://aip.baidubce.com/rest/2.0/image-classify/v1/flower";
 	//手写文字识别
 	static final String HANDWRITING_URL="https://aip.baidubce.com/rest/2.0/ocr/v1/handwriting";
 	public AipAdded(String appId, String apiKey, String secretKey) {
@@ -41,6 +43,30 @@ public class AipAdded extends AipImageClassify{
                 request.addBody(options);
             }
             request.setUri(INGREDIENT_URL);
+            postOperation(request);
+            return requestServer(request);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return AipError.IMAGE_READ_ERROR.toJsonResult();
+        }
+    }
+	/**
+	 * 花卉识别
+	 * @param image 图片本地路径
+	 * @param options 其他参数 
+	 * @return JSONObject
+	 */
+    public JSONObject flowerDetect(String image, HashMap<String, String> options) {
+    	AipRequest request = new AipRequest();
+    	preOperation(request);
+    	try {
+            byte[] data = Util.readFileByBytes(image);
+            String base64Content = Base64Util.encode(data);
+            request.addBody("image", base64Content);
+            if (options != null) {
+                request.addBody(options);
+            }
+            request.setUri(FLOWER_URL);
             postOperation(request);
             return requestServer(request);
         } catch (IOException e) {
